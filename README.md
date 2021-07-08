@@ -8,7 +8,7 @@ API desenvolvida com base em **Nodejs** para Controle de Atividades realizadas p
 
 ---
 
-> Em ordem alfabética
+> _Em ordem alfabética_
 
 - [Docker](https://www.docker.com/ 'Docker'): "Contêinirização"
 - [Express](https://expressjs.com/ 'Express'): Framework
@@ -19,6 +19,8 @@ API desenvolvida com base em **Nodejs** para Controle de Atividades realizadas p
 ## Dependências
 
 ---
+
+> _Em ordem alfabética_
 
 - [ESLint](https://eslint.org/ 'ESLint'): "Corretor" de erros de Código/Sintaxe)
 - [Jest](https://jestjs.io/ 'Jest'): Estrutura de testes de JavaScript
@@ -37,6 +39,14 @@ Iniciar o servidor da Aplicação:
 
 ```
     $ yarn dev
+```
+
+### Docker
+
+Subir as configurações do contêiner:
+
+```
+    $ docker-compose f docker/docker-compose.yml up -d
 ```
 
 [//]: #
