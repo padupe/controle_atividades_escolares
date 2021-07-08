@@ -6,7 +6,7 @@ API desenvolvida com base em **Nodejs** para Controle de Atividades realizadas p
 
 ## Tecnlogias Utilizadas
 
-=============
+---
 
 > Em ordem alfabética
 
@@ -18,7 +18,7 @@ API desenvolvida com base em **Nodejs** para Controle de Atividades realizadas p
 
 ## Dependências
 
-=============
+---
 
 - [ESLint](https://eslint.org/ 'ESLint'): "Corretor" de erros de Código/Sintaxe)
 - [Jest](https://jestjs.io/ 'Jest'): Estrutura de testes de JavaScript
@@ -29,7 +29,7 @@ API desenvolvida com base em **Nodejs** para Controle de Atividades realizadas p
 
 ## Comandos úteis no uso da Aplicação
 
-=============
+---
 
 ### Developmente Server
 
