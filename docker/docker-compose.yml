@@ -1,0 +1,14 @@
+version: '3.3'
+services:
+  postgresql:
+    image: postgres:alpine
+    container_name: controleatividades_api-postgresql
+    environment:
+      - POSTGRES_DB=controle_atividades
+      - POSTGRES_PASSWORD=development
+    ports:
+      - 5432:5432
+    volumes:
+      - controleatividades_api_psql:/var/lib/postgresql/data
+volumes:
+    controleatividades_api_psql:
