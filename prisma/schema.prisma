@@ -9,3 +9,127 @@ datasource db {
 generator client {
   provider = "prisma-client-js"
 }
+
+model Status {
+  id                Int          @id @default(autoincrement())
+  nome              String       @unique @db.VarChar(20)
+  criado            DateTime     @default(now())
+  alterado          DateTime     @default(now()) @updatedAt
+  usuario           Usuario[]
+  aluno             Aluno[]
+}
+
+model Perfil {
+  id                Int          @id @default(autoincrement())
+  nome              String       @unique @db.VarChar(20)
+  criado            DateTime     @default(now())
+  alterado          DateTime     @default(now()) @updatedAt
+  usuario           Usuario[]
+}
+
+model Usuario {
+  id                String       @id @default(cuid())
+  nome              String       @db.VarChar(48)
+  email             String       @unique @db.VarChar(48)
+  password          String       @db.Text
+  perfilID          Int
+  statusID          Int
+  criado            DateTime     @default(now())
+  alterado          DateTime     @default(now()) @updatedAt
+  perfil            Perfil       @relation(fields: [perfilID], references: [id])
+  status            Status       @relation(fields: [statusID], references: [id])
+  turma             Turma?
+}
+
+model Semana {
+  id                String       @id @default(cuid())
+  nome              String       @db.VarChar(48)
+  criado            DateTime     @default(now())
+  alterado          DateTime     @default(now()) @updatedAt
+  semana_turma      Semana_Turma[]
+}
+
+model Turma {
+  id                String       @id @default(cuid())
+  usuarioID         String
+  criado            DateTime     @default(now())
+  alterado          DateTime     @default(now()) @updatedAt
+  usuario           Usuario      @relation(fields: [usuarioID], references: [id]) 
+  turma_aluno       Turma_Aluno[]
+  semana_turma      Semana_Turma[] 
+}
+
+model Aluno {
+  id                String       @id @default(cuid())
+  nome              String       @db.VarChar(48)
+  ra                String       @unique @db.VarChar(10)
+  statusID          Int
+  criado            DateTime     @default(now())
+  alterado          DateTime     @default(now()) @updatedAt
+  status            Status       @relation(fields: [statusID], references: [id])
+  turma_aluno       Turma_Aluno[]  
+}
+
+model Atividade {
+  id                String       @id @default(cuid())
+  nome              String       @db.VarChar(48)
+  descricao         String       @unique @db.VarChar(50)
+  criado            DateTime     @default(now())
+  alterado          DateTime     @default(now()) @updatedAt
+  turma_atividade_semana  Turma_Atividade_Semana[]  
+}
+
+model Turma_Aluno {
+  id                String       @id @default(cuid())
+  alunoID           String
+  turmaID           String
+  criado            DateTime     @default(now())
+  alterado          DateTime     @default(now()) @updatedAt
+  aluno             Aluno        @relation(fields: [alunoID], references: [id])
+  turma             Turma        @relation(fields: [turmaID], references: [id])
+}
+
+model Semana_Turma {
+  id                String       @id @default(cuid())
+  semanaID          String
+  turmaID           String
+  criado            DateTime     @default(now())
+  alterado          DateTime     @default(now()) @updatedAt
+  semana            Semana       @relation(fields: [semanaID], references: [id])
+  turma             Turma        @relation(fields: [turmaID], references: [id])
+  acao              Acao[]
+  turma_atividade_semana  Turma_Atividade_Semana[]
+}
+
+model Acao {
+  id                String        @id @default(cuid())
+  semanaTurmaID     String
+  whatsApp          AcaoRealizada?
+  ligacao           AcaoRealizada?
+  videoChamada      AcaoRealizada?
+  pessoalmente      AcaoRealizada?
+  observacao        String        @db.Text
+  criado            DateTime      @default(now())
+  alterado          DateTime      @default(now()) @updatedAt
+  semana_turma      Semana_Turma  @relation(fields: [semanaTurmaID], references: [id])
+}
+
+enum AcaoRealizada {
+  Sim
+  Nao
+}
+
+model Turma_Atividade_Semana {
+  id                  String        @id @default(cuid())
+  semanaTurmaID       String
+  atividadeID         String
+  presencial          AcaoRealizada?
+  remoto              AcaoRealizada?
+  responsavelRetirou  AcaoRealizada?
+  devolutiva          AcaoRealizada?
+  semContato          AcaoRealizada
+  criado              DateTime      @default(now())
+  alterado            DateTime      @default(now()) @updatedAt
+  semana_turma        Semana_Turma  @relation(fields: [semanaTurmaID], references: [id])
+  atividade           Atividade  @relation(fields: [atividadeID], references: [id])  
+}
