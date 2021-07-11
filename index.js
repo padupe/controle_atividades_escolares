@@ -12,6 +12,6 @@ if (process.env.NODE_ENV !== 'test') {
   });
 }
 
-app.use('v1/', routes);
+app.use('/v1', routes);
 
 module.exports = app;

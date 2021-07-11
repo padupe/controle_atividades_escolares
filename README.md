@@ -26,6 +26,7 @@ API desenvolvida com base em **Nodejs** para Controle de Atividades realizadas p
 - [email-validator](https://www.npmjs.com/package/email-validator 'email-validator'): Módulo para validar endereço de e-mail
 - [ESLint](https://eslint.org/ 'ESLint'): "Corretor" de erros de Código/Sintaxe)
 - [Jest](https://jestjs.io/ 'Jest'): Estrutura de testes de JavaScript
+- [jsonwebtoken](https://www.npmjs.com/package/jsonwebtoken 'jsonwebtoken'): Módulo de Autenticação para Segurança da Aplicação
 - [nodemon](https://www.npmjs.com/package/nodemon 'nodemon'): Ferramenta que reinicia automaticamente o servidor quando mudanças são detectadas.
 - [Prettier](https://prettier.io/ 'Prettier'): "Formatador" de Código
 - [SuperTest](https://www.npmjs.com/package/supertest 'SuperTest'): Módulo para testes de Integração
