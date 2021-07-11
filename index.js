@@ -1,13 +1,17 @@
 const express = require('express');
 const app = express();
-// const routes = require('./routes');
+const routes = require('./routes');
+const logger = require('./utilities/logger');
 
 app.use(express.json());
 
-app.listen(process.env.PORT, () => {
-  `Server Started on port ${process.env.PORT} with env ${process.env.NODE_ENV}! 🚀`;
-});
+if (process.env.NODE_ENV !== 'test') {
+  app.listen(process.env.PORT, () => {
+    logger.info('Server Started! 🚀');
+    console.log('Server Started! 🚀');
+  });
+}
 
-// app.use('/', routes);
+app.use('v1/', routes);
 
 module.exports = app;

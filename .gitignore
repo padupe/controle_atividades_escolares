@@ -4,3 +4,4 @@ yarn-error.log
 prisma/*.db
 prisma/*.db-journal
 prisma/*.toml
+logs/

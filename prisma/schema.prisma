@@ -31,7 +31,7 @@ model Usuario {
   id                String       @id @default(cuid())
   nome              String       @db.VarChar(48)
   email             String       @unique @db.VarChar(48)
-  password          String       @db.Text
+  senha             String       @db.Text
   perfilID          Int
   statusID          Int
   criado            DateTime     @default(now())
@@ -51,6 +51,7 @@ model Semana {
 
 model Turma {
   id                String       @id @default(cuid())
+  nome              String
   usuarioID         String
   criado            DateTime     @default(now())
   alterado          DateTime     @default(now()) @updatedAt
@@ -62,7 +63,7 @@ model Turma {
 model Aluno {
   id                String       @id @default(cuid())
   nome              String       @db.VarChar(48)
-  ra                String       @unique @db.VarChar(10)
+  ra                String       @unique @db.VarChar(13)
   statusID          Int
   criado            DateTime     @default(now())
   alterado          DateTime     @default(now()) @updatedAt
@@ -108,7 +109,7 @@ model Acao {
   ligacao           AcaoRealizada?
   videoChamada      AcaoRealizada?
   pessoalmente      AcaoRealizada?
-  observacao        String        @db.Text
+  observacao        String?       @db.Text
   criado            DateTime      @default(now())
   alterado          DateTime      @default(now()) @updatedAt
   semana_turma      Semana_Turma  @relation(fields: [semanaTurmaID], references: [id])
@@ -127,9 +128,9 @@ model Turma_Atividade_Semana {
   remoto              AcaoRealizada?
   responsavelRetirou  AcaoRealizada?
   devolutiva          AcaoRealizada?
-  semContato          AcaoRealizada
+  semContato          AcaoRealizada?
   criado              DateTime      @default(now())
   alterado            DateTime      @default(now()) @updatedAt
   semana_turma        Semana_Turma  @relation(fields: [semanaTurmaID], references: [id])
-  atividade           Atividade  @relation(fields: [atividadeID], references: [id])  
+  atividade           Atividade     @relation(fields: [atividadeID], references: [id])  
 }

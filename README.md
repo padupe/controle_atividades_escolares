@@ -22,12 +22,15 @@ API desenvolvida com base em **Nodejs** para Controle de Atividades realizadas p
 
 > _Em ordem alfabética_
 
+- [bcrypt](https://www.npmjs.com/package/bcrypt 'bcrypt'): Biblioteca para realizar _hash_ de senhas.
+- [email-validator](https://www.npmjs.com/package/email-validator 'email-validator'): Módulo para validar endereço de e-mail
 - [ESLint](https://eslint.org/ 'ESLint'): "Corretor" de erros de Código/Sintaxe)
 - [Jest](https://jestjs.io/ 'Jest'): Estrutura de testes de JavaScript
-- [nodemon](https://www.npmjs.com/package/nodemon 'nodemon'): Ferramenta que reinici automaticamente o servidor quando mudanças são detectadas.
+- [nodemon](https://www.npmjs.com/package/nodemon 'nodemon'): Ferramenta que reinicia automaticamente o servidor quando mudanças são detectadas.
 - [Prettier](https://prettier.io/ 'Prettier'): "Formatador" de Código
 - [SuperTest](https://www.npmjs.com/package/supertest 'SuperTest'): Módulo para testes de Integração
 - [uuidv4](https://www.npmjs.com/package/uuidv4 'uuidv4'): Módulo para criar UUID (_Universally Unique IDentifier_) conforme [RFC1422].
+- [winston](https://www.npmjs.com/package/winston 'winston'): Biblioteca para o registro de logging de Aplicações.
 
 ## Comandos úteis no uso da Aplicação
 
@@ -48,6 +51,16 @@ Subir as configurações do contêiner:
 ```
     $ docker-compose f docker/docker-compose.yml up -d
 ```
+
+---
+
+## Logging
+
+| Level |         Observação         |
+| :---: | :------------------------: |
+| info  |           Teste            |
+| debug |      Dados do Usuário      |
+| error | Erros de Banco / Aplicação |
 
 [//]: #
 [rfc1422]: https://www.ietf.org/rfc/rfc4122.txt
