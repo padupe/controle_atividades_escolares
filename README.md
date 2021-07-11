@@ -14,7 +14,7 @@ API desenvolvida com base em **Nodejs** para Controle de Atividades realizadas p
 - [Express](https://expressjs.com/ 'Express'): Framework
 - [Nodejs](https://nodejs.org/en/ 'Nodejs'): Eventos voltados para o Backend
 - [Prisma](https://www.prisma.io/ 'Prisma'): ORM responsável pela Conexão com o Banco de Dados
-- [Postgre](https://www.postgresql.org/ 'Postgre'): Sistema Gerenciador do Banco de Dados
+- [PostgreSQL](https://www.postgresql.org/ 'PostgreSQL'): Sistema Gerenciador do Banco de Dados
 
 ## Dependências
 
@@ -32,6 +32,10 @@ API desenvolvida com base em **Nodejs** para Controle de Atividades realizadas p
 - [SuperTest](https://www.npmjs.com/package/supertest 'SuperTest'): Módulo para testes de Integração
 - [uuidv4](https://www.npmjs.com/package/uuidv4 'uuidv4'): Módulo para criar UUID (_Universally Unique IDentifier_) conforme [RFC1422].
 - [winston](https://www.npmjs.com/package/winston 'winston'): Biblioteca para o registro de logging de Aplicações.
+
+## MER
+
+![img](https://github.com/padupe/controle_atividades_escolares/blob/Routes/Readme/MER.png)
 
 ## Comandos úteis no uso da Aplicação
 
