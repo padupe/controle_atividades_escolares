@@ -1,6 +1,6 @@
 const prisma = require('../prisma/prisma');
 
-async function findUser(email_user) {
+async function buscaUsuario(email_user) {
   let result = await prisma.usuario.findUnique({
     where: { email: email_user },
     select: {
@@ -8,9 +8,10 @@ async function findUser(email_user) {
       nome: true,
       email: true,
       senha: true,
+      perfilID: true,
     },
   });
   return result;
 }
 
-module.exports = { findUser };
+module.exports = { buscaUsuario };

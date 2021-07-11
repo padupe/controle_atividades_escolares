@@ -53,6 +53,32 @@ Subir as configurações do contêiner:
     $ docker-compose f docker/docker-compose.yml up -d
 ```
 
+### PostgreSQL (Banco de Dados) / ORM Prisma
+
+Interface Visual no navegador para acessar o Banco de Dados:
+
+```
+    $ npx prisma studio
+```
+
+Inicar Migration:
+
+```
+    $ yarn migrate
+```
+
+Carregar os dados de teste no Banco:
+
+```
+    $ yarn seed
+```
+
+Realizar o _reset_ das Migrations e limpar o Banco de Dados:
+
+```
+    $ npx prisma migrate reset
+```
+
 ---
 
 ## Logging

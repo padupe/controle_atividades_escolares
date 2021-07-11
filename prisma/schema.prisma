@@ -33,7 +33,7 @@ model Usuario {
   email             String       @unique @db.VarChar(48)
   senha             String       @db.Text
   perfilID          Int
-  statusID          Int
+  statusID          Int          @default(1)
   criado            DateTime     @default(now())
   alterado          DateTime     @default(now()) @updatedAt
   perfil            Perfil       @relation(fields: [perfilID], references: [id])
@@ -64,7 +64,7 @@ model Aluno {
   id                String       @id @default(cuid())
   nome              String       @db.VarChar(48)
   ra                String       @unique @db.VarChar(13)
-  statusID          Int
+  statusID          Int          @default(1)
   criado            DateTime     @default(now())
   alterado          DateTime     @default(now()) @updatedAt
   status            Status       @relation(fields: [statusID], references: [id])
@@ -74,7 +74,7 @@ model Aluno {
 model Atividade {
   id                String       @id @default(cuid())
   nome              String       @db.VarChar(48)
-  descricao         String       @unique @db.VarChar(50)
+  descricao         String       @db.VarChar(50)
   criado            DateTime     @default(now())
   alterado          DateTime     @default(now()) @updatedAt
   turma_atividade_semana  Turma_Atividade_Semana[]  

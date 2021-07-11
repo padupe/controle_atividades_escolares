@@ -1,6 +1,6 @@
 const validaEmail = require('email-validator');
 const logger = require('../utilities/logger');
-const { findUser } = require('./findUser');
+const { buscaUsuario } = require('./buscaUsuario');
 const { compare } = require('../utilities/crypt');
 const { gerarJWT } = require('../auth/token');
 
@@ -18,7 +18,7 @@ const logUser = async (req, res) => {
 
     default:
       try {
-        const usuario = await findUser(email);
+        const usuario = await buscaUsuario(email);
         //Se o e-mail informado estiver incorreto ou não existir cai no IF
         if (usuario == null) {
           logger.error('Dados Inválidos!');
@@ -34,7 +34,10 @@ const logUser = async (req, res) => {
 
           default:
             try {
-              const Token = await gerarJWT({ usuario: usuario.email });
+              const Token = await gerarJWT(
+                { email: usuario.email },
+                { perfil: usuario.perfilID }
+              );
               return res.status(202).json({ tokenJWT: Token });
             } catch (error) {}
         }

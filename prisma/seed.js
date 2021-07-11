@@ -50,7 +50,6 @@ async function populateDB() {
       email: default_prof.email,
       senha: await hash(default_prof.senha),
       perfilID: 3,
-      statusID: 1,
     },
   });
 
@@ -60,7 +59,6 @@ async function populateDB() {
       email: default_super.email,
       senha: await hash(default_super.senha),
       perfilID: 2,
-      statusID: 1,
     },
   });
 
@@ -70,7 +68,6 @@ async function populateDB() {
       email: default_admin.email,
       senha: await hash(default_admin.senha),
       perfilID: 1,
-      statusID: 1,
     },
   });
 
@@ -91,7 +88,7 @@ async function populateDB() {
     data: {
       nome: default_aluno.nome,
       ra: default_aluno.ra,
-      statusID: 1,
+      // statusID: 1,
     },
   });
 
