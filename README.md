@@ -35,6 +35,8 @@ API desenvolvida com base em **Nodejs** para Controle de Atividades realizadas p
 
 ## MER
 
+---
+
 ![img](https://github.com/padupe/controle_atividades_escolares/blob/Routes/Readme/MER.png)
 
 ## Comandos úteis no uso da Aplicação
