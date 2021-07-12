@@ -9,7 +9,6 @@ const options = {
 };
 
 function gerarJWT(payload) {
-  console.log(payload);
   return jwt.sign(payload, process.env.SECRET_KEY, options);
 }
 

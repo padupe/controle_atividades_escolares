@@ -9,6 +9,17 @@ async function buscaUsuario(email_user) {
       email: true,
       senha: true,
       perfilID: true,
+      perfil: {
+        select: {
+          nome: true,
+        },
+      },
+      statusID: true,
+      status: {
+        select: {
+          nome: true,
+        },
+      },
     },
   });
   return result;

@@ -24,6 +24,13 @@ const default_aluno = {
   ra: '123456789-0',
 };
 
+const default_userBlock = {
+  nome: 'Usuário Bloqueado',
+  email: 'user.block@email.com',
+  senha: '123456',
+  statusID: 2,
+};
+
 async function populateDB() {
   const status = await prisma.status.createMany({
     data: [
@@ -68,6 +75,16 @@ async function populateDB() {
       email: default_admin.email,
       senha: await hash(default_admin.senha),
       perfilID: 1,
+    },
+  });
+
+  const userBlock = await prisma.usuario.create({
+    data: {
+      nome: default_userBlock.nome,
+      email: default_userBlock.email,
+      senha: await hash(default_userBlock.senha),
+      perfilID: 3,
+      statusID: 2,
     },
   });
 

@@ -39,6 +39,39 @@ API desenvolvida com base em **Nodejs** para Controle de Atividades realizadas p
 
 ![img](https://github.com/padupe/controle_atividades_escolares/blob/Routes/Readme/MER.png)
 
+## Modelos de JSON para uso na Aplicação
+
+---
+
+### Login na Aplicação
+
+Usuário Válido:
+
+```json
+{
+  "email": "peixoto.pauloeduardo@gmail.com",
+  "senha": "Edu@16101990"
+}
+```
+
+Usuário com _status_ **Inativo**:
+
+```json
+{
+  "email": "user.block@email.com",
+  "senha": "123456"
+}
+```
+
+### Cadastro de Novo Aluno
+
+```json
+{
+  "nome": "Antonella Maria",
+  "ra": "987654321-X"
+}
+```
+
 ## Comandos úteis no uso da Aplicação
 
 ---

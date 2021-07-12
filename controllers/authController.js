@@ -14,7 +14,7 @@ const logUser = async (req, res) => {
   switch (true) {
     case validaEmail.validate(email) == false:
       logger.error('Dados Inválidos!');
-      return res.status(400).json({ error: 'Dados Inválidos!' });
+      return res.status(400).json({ erro: 'Dados Inválidos!' });
 
     default:
       try {
@@ -22,28 +22,38 @@ const logUser = async (req, res) => {
         //Se o e-mail informado estiver incorreto ou não existir cai no IF
         if (usuario == null) {
           logger.error('Dados Inválidos!');
-          return res.status(401).json({ error: 'Dados Inválidos!' });
+          return res.status(401).json({ erro: 'Dados Inválidos!' });
         }
+
+        console.log(usuario);
 
         const senhaOK = await compare(senha, usuario.senha);
 
         switch (true) {
           case senhaOK == false:
             logger.error('Dados Inválidos!');
-            return res.status(401).json({ error: 'Dados Inválidos!' });
+            return res.status(401).json({ erro: 'Dados Inválidos!' });
+
+          case usuario.statusID == process.env.INATIVO:
+            logger.error('Usuário Inativo!');
+            return res.status(401).json({
+              erro: 'Suas credenciais não são válidas. Contate o Administrador.',
+            });
 
           default:
             try {
-              const Token = await gerarJWT(
-                { email: usuario.email },
-                { perfil: usuario.perfilID }
-              );
+              const Token = await gerarJWT({
+                email: usuario.email,
+                perfil: usuario.perfilID,
+              });
               return res.status(202).json({ tokenJWT: Token });
-            } catch (error) {}
+            } catch (erro) {
+              logger.error(JSON.stringify(erro));
+            }
         }
-      } catch (error) {
-        logger.error(JSON.stringify(error));
-        return res.status(401).json({ error: 'Dados Inválidos!' });
+      } catch (erro) {
+        logger.error(JSON.stringify(erro));
+        return res.status(401).json({ erro: 'Dados Inválidos!' });
       }
   }
 };
