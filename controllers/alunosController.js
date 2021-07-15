@@ -61,6 +61,7 @@ const show = async (req, res) => {
 
 const update = async (req, res) => {
   // Teste de Commit
+  // Teste de Commit2
 };
 
 const destroy = async (req, res) => {};
