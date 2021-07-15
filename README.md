@@ -89,7 +89,7 @@ Iniciar o servidor da Aplicação:
 Subir as configurações do contêiner:
 
 ```
-    $ docker-compose f docker/docker-compose.yml up -d
+    $ docker-compose -f docker/docker-compose.yml up -d
 ```
 
 ### PostgreSQL (Banco de Dados) / ORM Prisma
