@@ -59,7 +59,9 @@ const show = async (req, res) => {
   res.status(401).json({ erro: 'Usuário não autorizado.' });
 };
 
-const update = async (req, res) => {};
+const update = async (req, res) => {
+  // Teste de Commit
+};
 
 const destroy = async (req, res) => {};
 
