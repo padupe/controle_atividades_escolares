@@ -23,6 +23,7 @@ API desenvolvida com base em **Nodejs** para Controle de Atividades realizadas p
 > _Em ordem alfabética_
 
 - [bcrypt](https://www.npmjs.com/package/bcrypt 'bcrypt'): Biblioteca para realizar _hash_ de senhas.
+- [cross-env](https://www.npmjs.com/package/cross-env 'cross-env'): Módulo que permite executar scripts que definem e usam variáveis de ambiente.
 - [email-validator](https://www.npmjs.com/package/email-validator 'email-validator'): Módulo para validar endereço de e-mail
 - [ESLint](https://eslint.org/ 'ESLint'): "Corretor" de erros de Código/Sintaxe)
 - [Jest](https://jestjs.io/ 'Jest'): Estrutura de testes de JavaScript
@@ -54,6 +55,15 @@ Usuário Válido:
 }
 ```
 
+Usuário com perfil **Professor**:
+
+```json
+{
+  "email": "ursula.yamada@edusjc.sp.gov.br",
+  "senha": "Edu@22101986"
+}
+```
+
 Usuário com _status_ **Inativo**:
 
 ```json
@@ -72,6 +82,17 @@ Usuário com _status_ **Inativo**:
 }
 ```
 
+### Atualizar o Cadastro de um Aluno
+
+```json
+{
+  "nome": "Maria Eduarda da Silva Santos",
+  "status": 3
+}
+```
+
+> _StatusID_
+
 ## Comandos úteis no uso da Aplicação
 
 ---
@@ -81,7 +102,7 @@ Usuário com _status_ **Inativo**:
 Iniciar o servidor da Aplicação:
 
 ```
-    $ yarn dev
+    $ npx yarn dev
 ```
 
 ### Docker
@@ -103,13 +124,13 @@ Interface Visual no navegador para acessar o Banco de Dados:
 Inicar Migration:
 
 ```
-    $ yarn migrate
+    $ npx yarn migrate
 ```
 
 Carregar os dados de teste no Banco:
 
 ```
-    $ yarn seed
+    $ npx yarn seed
 ```
 
 Realizar o _reset_ das Migrations e limpar o Banco de Dados:

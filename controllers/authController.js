@@ -25,8 +25,6 @@ const logUser = async (req, res) => {
           return res.status(401).json({ erro: 'Dados Inválidos!' });
         }
 
-        console.log(usuario);
-
         const senhaOK = await compare(senha, usuario.senha);
 
         switch (true) {

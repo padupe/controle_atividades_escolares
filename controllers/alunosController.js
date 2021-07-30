@@ -60,10 +60,50 @@ const show = async (req, res) => {
 };
 
 const update = async (req, res) => {
-  // Teste de Commit
-  // Teste de Commit2
-  // Tesde de Commmit3
-  // Teste de Commit4
+  if (verificarJWT(req.headers.authorization.replace('Bearer ', ''))) {
+    const { ra } = req.params;
+    const { nome, status } = req.body;
+    logger.debug(JSON.stringify(req.params));
+
+    const verifyPerfil = verificarJWT(
+      req.headers.authorization.replace('Bearer ', '')
+    );
+
+    if (
+      verifyPerfil.perfil == process.env.ADMIN ||
+      verifyPerfil.perfil == process.env.SUPERVISOR
+    ) {
+      try {
+        const localizaAluno = await buscaAluno(ra);
+        if (localizaAluno == null) {
+          logger.error('Aluno não localizado!');
+          return res.status(500).json({ erro: 'Aluno não localizado' });
+        }
+
+        const atualizarAluno = await prisma.aluno.update({
+          where: { ra: ra },
+          data: {
+            nome: nome,
+            statusID: status,
+          },
+        });
+
+        const resultado = await buscaAluno(atualizarAluno.ra);
+
+        return res
+          .status(200)
+          .json({ msg: 'Aluno Atualizado com Sucesso', resultado });
+      } catch (erro) {
+        console.log(erro);
+        logger.error(JSON.stringify(erro));
+        return res.status(404).json({ erro: erro });
+      }
+    }
+    res.status(401).json({
+      erro: 'Você não possui permissão para realizar alteração no cadastro do Aluno!',
+    });
+  }
+  res.status(401).json({ erro: 'Usuário não autorizado.' });
 };
 
 const destroy = async (req, res) => {};
