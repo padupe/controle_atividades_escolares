@@ -1,0 +1,104 @@
+/* Geral */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Helvetica;
+    color: #323232;
+    border: none;
+
+}
+
+body{
+    background-image: url('../img/escola1.jpg');
+    background-size: cover;
+    background-position-y: -200px;
+}
+
+textarea:focus, input:focus{
+    outline: none;
+}
+
+a, label{
+    font-size: .8rem;
+}
+
+a:hover{
+    color: #08558b;
+}
+
+/* container login */
+
+#login-container{
+    background-color: #ffffff;
+    width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px 30px;
+    margin-top: 10vh;
+    border-radius: 10px;
+    text-align: center;
+
+}
+/* formulario */
+
+form{
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+
+label, input{
+    display: block;
+    width: 100%;
+    text-align: left;
+}
+
+label{
+    font-weight: bold;
+    
+}
+input{
+    border-bottom: 2px solid #323232;
+    padding: 10px;
+    font-size: 1rem;
+    margin-bottom: 30px;
+}
+input:focus{
+    border-bottom: 2px solid #08558b;
+}
+#esqueceu{
+    text-align: right;
+    display: block;
+    text-decoration: none;
+}
+#esqueceu:hover{
+    text-decoration:underline;
+}
+#botao{
+    text-align: center;
+    text-transform: uppercase;
+    font-weight:bold ;
+    border: none;
+    height: 45px;
+    border-radius: 20px;
+    margin-top: 20px;
+    color: #fff; 
+    background-color: #f0ccafbe;
+    cursor: pointer;
+}
+#botao:hover{
+    background-color:#e4b48dd7;
+    transition: .5s;
+
+}
+/* registro */
+#registrar p{
+    margin-bottom: 20px;
+}
+#reg{
+    text-decoration: none;
+}
+#reg:hover{
+    text-decoration: underline;
+}

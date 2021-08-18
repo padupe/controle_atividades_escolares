@@ -5,8 +5,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Olá, mundo!</h1>
+    <div id="login-container">
+        <h1>Login</h1>
+        <form action="">
+            <label for="email">E-mail</label>
+            <input type="email" name="email" id="email" placeholder="Digite seu e-mail" autocomplete="off">
+            <label for="password">Senha</label>
+            <input type="password" name="password" id="password" placeholder="Digite sua senha ">
+            <a href="#" id="esqueceu">Esqueceu a senha ?</a>
+            <input type="submit" value="Entrar" id="botao">
+        </form>
+        <div id="registrar">
+            <p>Ainda não tem conta ?</p>
+            <a href="#" id="reg">Registrar</a>
+        </div>
+    </div>
 </body>
 </html>
