@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividades Realizadas</title>
+    <link rel="stylesheet" href="style00.css">
+    <style>
+        @font-face {
+            font-family: 'Ausion';
+            src: url('AusionPersonalUse.otf') format('opentype');
+            font-weight: normal;
+            font-style: normal;
+        }
+    </style>
+</head>
+<body>
+    <h1>Atividades Realizadas</h1>
+    <h2>Dados Alunos</h2>
+    <form>
+        <div class="dados">
+            <label class="dados">
+                Nome Aluno(a): <br>
+                <input type="text" name="nomea" id="nomea">
+            </label> <br>
+            <label class="dados">
+                Nota: <br>
+                <input type="number" name="nota" id="nota" min="0" max="10">
+            </label>
+        </div>
+        <div class="lado">
+            <label class="lado">
+                Turma: <br>
+                <input type="text" name="turma" id="turma">
+            </label> <br>
+            <label class="lado">
+                Matéria: <br>
+                <input type="text" name="materia" id="materia">
+            </label>
+        </div> <br>
+        <label>
+            Observações <br>
+            <textarea name="com" id="com" cols="50" rows="20"></textarea>
+        </label> <br>
+        <button id="botao">Enviar</button>
+        
+    </form>
+</body>
+</html>
