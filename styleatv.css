@@ -1,0 +1,80 @@
+*{
+    margin: 0;
+    font-family: Helvetica;
+    box-sizing: border-box;
+    
+}
+body{
+    background-image: linear-gradient(to right, #c3d3d370, #c8d4d4a9,#c9d7d88a);
+    background-attachment: fixed;
+}
+h1{
+    font-family: 'Ausion';
+    font-weight: normal;
+    font-size:  2.4rem;
+    margin-top: 1%;
+    margin-bottom: 4%;
+    text-align: center;
+    
+}
+h2{
+    font-family: 'Ausion';
+    font-weight: normal;
+    margin-left: 250px;
+    margin-bottom: 20px;
+}
+div{
+    display: inline-block;
+    margin-right: 60px;
+    margin-bottom: 40px;
+    
+}
+#nomea, #nota, #turma, #materia, #com{
+    border: 1px solid rgb(184, 182, 182);
+    outline: 0;
+    
+}
+
+.dados input, label{ 
+    padding: 10px;
+    width: 300px;
+    font-size: 17px;
+    margin-bottom: 40px;
+    margin-left: 5px;
+    
+    
+}
+.lado input, label{
+    padding: 10px; 
+    width: 300px;
+    font-size: 17px;
+    margin-bottom: 40px;
+    margin-left: 5px;
+    
+}
+
+textarea{
+    margin-left: 5px;
+    height: 200px;
+    resize: none;
+    font-size: 17px;
+    
+}
+#botao{
+    margin-top: 20px;
+    margin-bottom: 10px;
+    margin-left: 5px;
+    padding: 10px;
+    font-size: 15px;
+    border: 1px solid rgb(184, 182, 182);
+    background-color: rgb(228, 228, 236);
+    cursor: pointer;
+
+}
+
+#botao:hover{
+    background-color: #D8E4E4;
+    transition: .5s;
+}
+    
+
